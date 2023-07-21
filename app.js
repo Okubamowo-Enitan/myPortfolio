@@ -57,3 +57,49 @@ const typed = new Typed('.multiple-text', {
   backDelay: 1000,
   loop: true
 });
+
+const fullStackreadMoreBtn = document.getElementById('fullStack-btn');
+const frontEndreadMoreBtn = document.getElementById('frontend-btn');
+console.log(frontEndreadMoreBtn)
+const backEndreadMoreBtn = document.getElementById('backend-btn');
+const fullStackhiddenContent = document.getElementById('fullStack-hidden');
+const frontEndhiddenContent = document.getElementById('frontend-hidden');
+console.log(frontEndhiddenContent);
+const backEndhiddenContent = document.getElementById('backend-hidden'); 
+// console.log(hiddenContent);
+
+
+function fullStackreadHandler () {
+  if(fullStackhiddenContent.style.display === 'none') {
+    fullStackhiddenContent.style.display = 'block';
+    fullStackreadMoreBtn.textContent = 'Read Less';
+  } else {
+    fullStackhiddenContent.style.display = 'none'
+    fullStackreadMoreBtn.textContent = 'Read More';
+  }
+}
+
+fullStackreadMoreBtn.addEventListener('click', fullStackreadHandler);
+
+function frontEndhandler() {
+  if(frontEndhiddenContent.style.display === 'none') {
+    frontEndhiddenContent.style.display = 'block';
+    frontEndreadMoreBtn.textContent = 'Read Less';
+  } else {
+    frontEndhiddenContent.style.display = 'none';
+    frontEndreadMoreBtn.textContent = 'Read More';
+  }
+}
+
+function backEndHandler() {
+  if(backEndhiddenContent.style.display === 'none') {
+    backEndhiddenContent.style.display = 'block';
+    backEndreadMoreBtn.textContent = 'Read Less';
+  } else {
+    backEndhiddenContent.style.display = 'none';
+    backEndreadMoreBtn.textContent = 'Read More';
+  }
+}
+
+frontEndreadMoreBtn.addEventListener('click', frontEndhandler);
+backEndreadMoreBtn.addEventListener('click', backEndHandler);
